@@ -1,0 +1,53 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "name": "Soccer Tournament",
+        "image": "https://i.ibb.co/TL9XWbx/pablo-rebolledo-h8sl-o-Ncat0-unsplash-1.jpg",
+        "price": "$50",
+        "shortDescription": "Join our soccer tournament and showcase your skills!",
+        "buttonLabel": "Register Now"
+      },
+      {
+        "id": 2,
+        "name": "Basketball Camp",
+        "image": "https://i.ibb.co/CngW6Tg/vu-huy-hoang-chu-Ep-UEc-JKIs6s-unsplash.jpg",
+        "price": "$40",
+        "shortDescription": "Improve your basketball skills with our expert coaches.",
+        "buttonLabel": "Sign Up"
+      },
+      {
+        "id": 3,
+        "name": "Tennis Clinic",
+        "image": "https://example.com/tennis.jpg",
+        "price": "$60",
+        "shortDescription": "Learn tennis from professionals in our clinic.",
+        "buttonLabel": "Enroll"
+      },
+      {
+        "id": 4,
+        "name": "Running Marathon",
+        "image": "https://example.com/marathon.jpg",
+        "price": "$35",
+        "shortDescription": "Participate in a thrilling marathon event.",
+        "buttonLabel": "Join Race"
+      },
+      {
+        "id": 5,
+        "name": "Swimming Lessons",
+        "image": "https://example.com/swimming.jpg",
+        "price": "$45",
+        "shortDescription": "Get started with swimming lessons today.",
+        "buttonLabel": "Book Now"
+      },
+      {
+        "id": 6,
+        "name": "Golf Tournament",
+        "image": "https://example.com/golf.jpg",
+        "price": "$75",
+        "shortDescription": "Compete in our prestigious golf tournament.",
+        "buttonLabel": "Register"
+      }      
+    ]
+  }
+  
