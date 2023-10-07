@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../root/Root";
 import Home from "../pages/Home";
 import Login from "../authentication/Login";
+import SignUp from "../authentication/SignUp";
+import EventDetails from "../pages/EventDetails";
 
 const routes = createBrowserRouter([
     {
@@ -18,7 +20,12 @@ const routes = createBrowserRouter([
         },
         {
             path: "/signUp",
-            element: <Login></Login>
+            element: <SignUp></SignUp>
+        },
+        {
+            path: "/:name",
+            loader: () => fetch('./services.json'),
+            element: <EventDetails></EventDetails>
         }
       ]
     },

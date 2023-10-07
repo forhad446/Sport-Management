@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center max-w-7xl mx-auto px-4">
                 <div className="flex justify-center items-center">
                     <img className="w-[60px] h-[60px]" src={logo} alt="" />
-                    <h2> <span className="italic tracking-widest font-extrabold">Sports</span> <br /> Event Management</h2>
+                    <h2> <span className="italic tracking-widest font-extrabold">Entertainment</span> <br /> Event Management</h2>
                 </div>
                 {/* nav item for large device  */}
                 <ul className=" justify-center hidden md:flex gap-6">

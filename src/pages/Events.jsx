@@ -1,27 +1,45 @@
+import { Link } from "react-router-dom";
 
 const Events = ({ event }) => {
-    const { name, shortDescription, image } = event;
-    console.log(name);
+    const { name, shortDescription, image, price, buttonLabel } = event;
     return (
+        // backgroundImage: `url(${image})`, backgroundSize: 'cover',
         <>
-            <div
-                style={{
-                    backgroundImage: `url(${image})`, backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                }}
-                className="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20 min-h-[300px] relative bg-opacity-75 bg-[#000020]">
+            <div className="">
 
-                <div className="bg-[#797983] text-white absolute bottom-0 left-0 min-h-[100px] w-full flex flex-col justify-center">
-                    <p className="max-w-xs mx-auto mb-2 ">
-                        {shortDescription}
-                    </p>
-                    <a
-                        href="/"
-                        className=""
+                <div className="">
+                    <div
+                        className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
                     >
-                        Read more
-                    </a>
+                        <div className="flex flex-col h-full">
+                            <img
+                                src={image}
+                                className="object-cover w-full h-48"
+                                alt=""
+                            />
+                            <div className="flex-grow border border-t-0 rounded-b">
+                                <div className="p-5">
+                                    <h6 className="mb-2 font-semibold leading-5">
+                                        {name}
+                                    </h6>
+                                    <p className="text-sm text-gray-900">
+                                        {shortDescription.slice(0,100)}
+                                    </p>
+                                    <div className="flex justify-between mt-4">
+                                        <Link to={`/${name}`}>
+                                            <button className="bg-green-600 px-5 py-2 rounded-lg text-white">
+                                                {buttonLabel}
+                                            </button></Link>
+                                        <p>
+                                            {price}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </>
     );

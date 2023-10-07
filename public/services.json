@@ -1,53 +1,53 @@
 {
-    "services": [
-      {
-        "id": 1,
-        "name": "Soccer Tournament",
-        "image": "https://i.ibb.co/TL9XWbx/pablo-rebolledo-h8sl-o-Ncat0-unsplash-1.jpg",
-        "price": "$50",
-        "shortDescription": "Join our soccer tournament and showcase your skills!",
-        "buttonLabel": "Register Now"
-      },
-      {
-        "id": 2,
-        "name": "Basketball Camp",
-        "image": "https://i.ibb.co/CngW6Tg/vu-huy-hoang-chu-Ep-UEc-JKIs6s-unsplash.jpg",
-        "price": "$40",
-        "shortDescription": "Improve your basketball skills with our expert coaches.",
-        "buttonLabel": "Sign Up"
-      },
-      {
-        "id": 3,
-        "name": "Tennis Clinic",
-        "image": "https://example.com/tennis.jpg",
-        "price": "$60",
-        "shortDescription": "Learn tennis from professionals in our clinic.",
-        "buttonLabel": "Enroll"
-      },
-      {
-        "id": 4,
-        "name": "Running Marathon",
-        "image": "https://example.com/marathon.jpg",
-        "price": "$35",
-        "shortDescription": "Participate in a thrilling marathon event.",
-        "buttonLabel": "Join Race"
-      },
-      {
-        "id": 5,
-        "name": "Swimming Lessons",
-        "image": "https://example.com/swimming.jpg",
-        "price": "$45",
-        "shortDescription": "Get started with swimming lessons today.",
-        "buttonLabel": "Book Now"
-      },
-      {
-        "id": 6,
-        "name": "Golf Tournament",
-        "image": "https://example.com/golf.jpg",
-        "price": "$75",
-        "shortDescription": "Compete in our prestigious golf tournament.",
-        "buttonLabel": "Register"
-      }      
-    ]
-  }
-  
+  "services": [
+    {
+      "id": 1,
+      "name": "Concert Night",
+      "image": "https://i.ibb.co/c8NTPt6/people-2591959-1280.jpg",
+      "price": "$50",
+      "shortDescription": "Enjoy a night of live music with top artists! This service offers attendees the opportunity to experience a live concert featuring popular and talented musicians. Whether it's a rock concert, a pop music extravaganza, a classical music performance, or any other genre, Concert Night brings music enthusiasts together for an unforgettable evening. Attendees can expect an electrifying atmosphere, outstanding performances, and a chance to sing along and dance to their favorite tunes.",
+      "buttonLabel": "Buy Tickets"
+    },
+    {
+      "id": 2,
+      "name": "Movie Marathon",
+      "image": "https://i.ibb.co/4Rr79M8/braden-collum-ttb-Cw-N-m-Wic-unsplash.jpg",
+      "price": "$25",
+      "shortDescription": "Watch a series of blockbuster movies all night.",
+      "buttonLabel": "Get Passes"
+    },
+    {
+      "id": 3,
+      "name": "Comedy Show",
+      "image": "https://i.ibb.co/mSY36Xm/kwasi-ansong-bamfo-Xmu-Jav-a-U-unsplash.jpg",
+      "price": "$35",
+      "shortDescription": "Laugh your heart out with hilarious comedians.",
+      "buttonLabel": "Book Seats"
+    },
+    {
+      "id": 4,
+      "name": "Dance Party",
+      "image": "https://i.ibb.co/68kG2rY/maick-maciel-v8-C6-Blp-Bz-Y-unsplash.jpg",
+      "price": "$40",
+      "shortDescription": "Dance the night away to the latest beats.",
+      "buttonLabel": "Join the Party"
+    },
+    {
+      "id": 5,
+      "name": "Theater Play",
+      "image": "https://i.ibb.co/ZX6dFBF/markus-spiske-nv-KQ1kxhe-Rc-unsplash.jpg",
+      "price": "$30",
+      "shortDescription": "Experience a captivating theater performance.",
+      "buttonLabel": "Reserve Tickets"
+    },
+    {
+      "id": 6,
+      "name": "Magic Show",
+      "image": "https://i.ibb.co/7rHH3LK/sergi-viladesau-dttmeq-FUDSU-unsplash.jpg",
+      "price": "$20",
+      "shortDescription": "Witness mind-bending magic tricks and illusions.",
+      "buttonLabel": "Get Tickets"
+    }
+    
+  ]
+}
