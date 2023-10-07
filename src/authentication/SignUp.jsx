@@ -1,12 +1,35 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "./AuthProvider";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext);
+
+    const [errorSignUp, setErrorSignUp] = useState(null);
+
+    const handleSignUp = e => {
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        if (password.length < 6) {
+            setErrorSignUp('password must be 6 more letter');
+            return;
+        }
+
+        createUser()
+        console.log(email, password);
+    }
+    const notify = () => toast(errorSignUp);
     return (
-        <div>
+        <div className="flex justify-center my-8">
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
 
                 <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
                     <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
-                        Login To Your Account
+                        Sign up to your Account
                     </div>
                     <div className="flex gap-4 item-center">
                         <button type="button" className="py-2 px-4 flex justify-center items-center  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
@@ -25,7 +48,7 @@ const SignUp = () => {
                         </button>
                     </div>
                     <div className="mt-8">
-                        <form action="#" autoComplete="off">
+                        <form onSubmit={handleSignUp}>
                             <div className="flex flex-col mb-2">
                                 <div className="flex relative ">
                                     <span className="rounded-l-md inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
@@ -34,7 +57,8 @@ const SignUp = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="text" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
+                                    <input type="text"
+                                        name="email" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
                                 </div>
                             </div>
                             <div className="flex flex-col mb-6">
@@ -45,7 +69,8 @@ const SignUp = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="password" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your password" />
+                                    <input type="password"
+                                        name="password" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your password" />
                                 </div>
                             </div>
                             <div className="flex items-center mb-6 -mt-4">
@@ -56,18 +81,32 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <div className="flex w-full">
-                                <button type="submit" className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                                    Login
+                                <button type="submit" onClick={notify} className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                    Sign Up
                                 </button>
                             </div>
                         </form>
+                        <div className="flex justify-center">
+                            <ToastContainer
+                                position="top-center"
+                                autoClose={5000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="light"
+                            />
+                        </div>
                     </div>
                     <div className="flex items-center justify-center mt-6">
-                        <a href="#" target="_blank" className="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white">
+                        <Link to="/login" className="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white">
                             <span className="ml-2">
-                                You don&#x27;t have an account?
+                                Already have an account? Please Login
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

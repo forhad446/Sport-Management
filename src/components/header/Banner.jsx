@@ -11,10 +11,10 @@ const Banner = () => {
             />
             <div className="relative h-full bg-gray-900 bg-opacity-75 flex justify-center items-center">
                 <div className="">
-                    <h2 className="text-3xl font-bold text-white sm:text-4xl sm:leading-none ">
+                    <h2 className="text-3xl font-bold text-white sm:text-4xl sm:leading-none text-center">
                         CELEBRATE YOUR EVENTSTHAT <br /> LASTS LONGER
                     </h2>
-                    <p className="max-w-xl mt-4 text-base text-gray-400 md:text-lg">
+                    <p className="max-w-xl mt-4 text-base text-gray-400 md:text-lg text-center">
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                         accusantium doloremque laudan, totam rem aperiam, eaque ipsa
                         quae.

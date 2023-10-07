@@ -5,7 +5,7 @@ const Footer = () => {
             <footer className="footer footer-center p-10 bg-[#000020] text-primary-content">
                 <aside>
                 <div className="flex justify-center items-center">
-                    <h2> <span className="italic tracking-widest font-extrabold">Sports</span> <br /> Event Management</h2>
+                    <h2> <span className="italic tracking-widest font-extrabold">Entertainment</span> <br /> Event Management</h2>
                 </div>
                     <p className="font-bold">
                         ACME Industries Ltd. <br />Providing reliable tech since 1992
