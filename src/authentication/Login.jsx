@@ -1,11 +1,42 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Login = () => {
-    const authInfo = useContext(AuthContext);
+
+    const [errorLogin, setErrorLogin] = useState(null)
+    const { signInUser, user } = useContext(AuthContext);
+
+    
+
+    const handleLogin = e => {
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        // clear the state value of error
+        setErrorLogin('')
+
+        if (password.length < 6) {
+            setErrorLogin('password must be 6 more letter');
+            return;
+        }else if (!/[A-Z]/.test(password)) {
+            setErrorLogin('password must have one more capital letter')
+        } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)){
+            setErrorLogin('password must have one more special character')
+        } else {
+            signInUser(email, password)
+                .then(user => console.log('user login done'))
+                .catch(error => setErrorLogin(error.message))
+            
+        }
+    }
     return (
         <div className="flex justify-center my-8">
+        {
+            user?.email && 
+            <Navigate to="/profile" />
+        }
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
 
                 <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
@@ -29,7 +60,7 @@ const Login = () => {
                         </button>
                     </div>
                     <div className="mt-8">
-                        <form action="#" autoComplete="off">
+                        <form onSubmit={handleLogin}>
                             <div className="flex flex-col mb-2">
                                 <div className="flex relative ">
                                     <span className="rounded-l-md inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
@@ -38,7 +69,8 @@ const Login = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="text" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
+                                    <input type="email"
+                                        name="email" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
                                 </div>
                             </div>
                             <div className="flex flex-col mb-6">
@@ -49,7 +81,8 @@ const Login = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="password" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your password" />
+                                    <input type="password"
+                                        name="password" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your password" />
                                 </div>
                             </div>
                             <div className="flex items-center mb-6 -mt-4">

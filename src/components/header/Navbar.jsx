@@ -1,10 +1,16 @@
 import { NavLink } from "react-router-dom";
 import logo from './../../assets/images/logo.png'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AuthContext } from "../../authentication/AuthProvider";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase.config";
 
 const Navbar = () => {
     const [showItem, setShowItem] = useState(true);
+
+    const { user, setUser } = useContext(AuthContext);
+
 
     const handleShowItem = () => {
         setShowItem(!showItem)
@@ -28,24 +34,52 @@ const Navbar = () => {
                         >Home
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink
-                            to='/login'
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-green-400 underline" : ""
-                            }
-                        >Login
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to='/signUp'
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-green-400 underline" : ""
-                            }
-                        >Sign Up
-                        </NavLink>
-                    </li>
+                    {
+                        user?.email ?
+                            <>
+                                <li>
+                                    <NavLink
+                                        to='/profile'
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-green-400 underline" : ""
+                                        }
+                                    >Profile
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        onClick={() => {
+                                            setUser(null)
+                                            signOut(auth)
+                                        }}
+                                        to='/login'
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-green-400 underline" : ""
+                                        }
+                                    >Log Out
+                                    </NavLink>
+                                </li>
+                            </>
+                            : <><li>
+                                <NavLink
+                                    to='/login'
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-green-400 underline" : ""
+                                    }
+                                >Login
+                                </NavLink>
+                            </li>
+                                <li>
+                                    <NavLink
+                                        to='/signUp'
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-green-400 underline" : ""
+                                        }
+                                    >Sign Up
+                                    </NavLink>
+                                </li>
+                            </>
+                    }
                 </ul>
                 {/* nav item for small device */}
                 <div className="text-3xl block md:hidden"
@@ -59,8 +93,8 @@ const Navbar = () => {
             </div>
             {
                 !showItem &&
-                <div 
-                className="absolute block md:hidden z-50 bg-[#000020] text-white w-2/4 h-screen text-center py-6 rounded-md delay-1000">
+                <div
+                    className="absolute block md:hidden z-50 bg-[#000020] text-white w-2/4 h-screen text-center py-6 rounded-md delay-1000">
                     <ul className=" flex justify-center md:hidden flex-col gap-3">
                         <li>
                             <NavLink

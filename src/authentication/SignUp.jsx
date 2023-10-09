@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, user, googleSignIn } = useContext(AuthContext);
 
     const [errorSignUp, setErrorSignUp] = useState(null);
 
@@ -14,17 +14,37 @@ const SignUp = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+        // clear the state value of error
+        setErrorSignUp('')
+
         if (password.length < 6) {
             setErrorSignUp('password must be 6 more letter');
             return;
+        } else if (!/[A-Z]/.test(password)) {
+            setErrorSignUp('password must have one more capital letter');
+            return;
+        } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            setErrorSignUp('password must have one more special character');
+            return;
+        } else {
+            createUser(email, password)
+                .then(() => setErrorSignUp('successfully created your account'))
+                .catch(error => setErrorSignUp(error.message))
+            console.log(errorSignUp);
         }
-
-        createUser()
-        console.log(email, password);
+    }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => console.log(result.user))
+        .catch(error => console.log(error.message))
     }
     const notify = () => toast(errorSignUp);
     return (
         <div className="flex justify-center my-8">
+            {
+                user?.email &&
+                <Navigate to="/profile" />
+            }
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
 
                 <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
@@ -39,7 +59,9 @@ const SignUp = () => {
                             </svg>
                             Facebook
                         </button>
-                        <button type="button" className="py-2 px-4 flex justify-center items-center  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        <button
+                            onClick={handleGoogleSignIn}
+                            type="button" className="py-2 px-4 flex justify-center items-center  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                             <svg width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M896 786h725q12 67 12 128 0 217-91 387.5t-259.5 266.5-386.5 96q-157 0-299-60.5t-245-163.5-163.5-245-60.5-299 60.5-299 163.5-245 245-163.5 299-60.5q300 0 515 201l-209 201q-123-119-306-119-129 0-238.5 65t-173.5 176.5-64 243.5 64 243.5 173.5 176.5 238.5 65q87 0 160-24t120-60 82-82 51.5-87 22.5-78h-436v-264z">
                                 </path>
@@ -57,7 +79,7 @@ const SignUp = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="text"
+                                    <input type="email"
                                         name="email" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
                                 </div>
                             </div>
