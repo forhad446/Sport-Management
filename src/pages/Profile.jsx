@@ -4,7 +4,6 @@ import { AuthContext } from "../authentication/AuthProvider";
 const Profile = () => {
 
     const { user, loading } = useContext(AuthContext)
-    console.log(user);
     return (
         <div className="flex justify-center py-16">
             <div className="w-64  bg-white shadow-lg rounded-2xl dark:bg-gray-800">
@@ -13,7 +12,15 @@ const Profile = () => {
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 -mt-16">
                     <a href="#" className="relative block">
-                        <img src="https://i.ibb.co/7Xp8pTR/icon-5887113-1280.png" className="mx-auto object-cover rounded-full h-16 w-16 " />
+                        {
+                            user?.photoURL ? 
+                            <>
+                                <img src={user.photoURL} alt="" className="mx-auto object-cover rounded-full h-16 w-16 "/>
+                            </> :
+                            <>
+                                <img src="https://i.ibb.co/7Xp8pTR/icon-5887113-1280.png" alt="" className="mx-auto object-cover rounded-full h-16 w-16 "/>
+                            </>
+                        }
                     </a>
                     <p className="mt-2 text-xl font-medium text-gray-800 dark:text-white mb-2">
                         {user?.email}

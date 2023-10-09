@@ -35,14 +35,6 @@ const EventDetails = () => {
                 <p className="max-w-xl mb-4 text-base text-gray-700 sm:mx-auto">
                     {data.shortDescription}
                 </p>
-                <a
-                    href="/"
-                    aria-label=""
-                    className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                >
-                    Learn more
-
-                </a>
             </div>
         </div>
     );

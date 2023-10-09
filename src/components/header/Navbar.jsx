@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from './../../assets/images/logo.png'
 import { useContext, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { RxAvatar } from 'react-icons/rx';
 import { AuthContext } from "../../authentication/AuthProvider";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
@@ -39,15 +40,6 @@ const Navbar = () => {
                             <>
                                 <li>
                                     <NavLink
-                                        to='/profile'
-                                        className={({ isActive, isPending }) =>
-                                            isPending ? "pending" : isActive ? "text-green-400 underline" : ""
-                                        }
-                                    >Profile
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink
                                         onClick={() => {
                                             setUser(null)
                                             signOut(auth)
@@ -59,6 +51,31 @@ const Navbar = () => {
                                     >Log Out
                                     </NavLink>
                                 </li>
+                                {
+                                    user?.displayName &&
+                                    <li>
+                                        <NavLink
+                                            to='/profile'
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-green-400 underline" : ""
+                                            }
+                                        >{user?.displayName}
+                                        </NavLink>
+                                    </li>
+                                }
+                                <li>
+                                    <NavLink
+                                        to='/profile'
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-green-400 underline" : ""
+                                        }
+                                    >
+                                        {user?.photoURL ?
+                                            <img className="w-2/4 rounded-full" src={user?.photoURL} alt="" /> :
+                                            < RxAvatar className="text-3xl" />}
+                                    </NavLink>
+                                </li>
+
                             </>
                             : <><li>
                                 <NavLink

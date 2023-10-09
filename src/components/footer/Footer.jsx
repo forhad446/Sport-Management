@@ -8,7 +8,7 @@ const Footer = () => {
                     <h2> <span className="italic tracking-widest font-extrabold">Entertainment</span> <br /> Event Management</h2>
                 </div>
                     <p className="font-bold">
-                        ACME Industries Ltd. <br />Providing reliable tech since 1992
+                    Entertainment Event Management Ltd. <br />Providing Entertain and comedy since 1992
                     </p>
                     <p>Copyright © 2023 - All right reserved</p>
                 </aside>

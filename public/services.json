@@ -13,7 +13,7 @@
       "name": "Movie Marathon",
       "image": "https://i.ibb.co/4Rr79M8/braden-collum-ttb-Cw-N-m-Wic-unsplash.jpg",
       "price": "$25",
-      "shortDescription": "Watch a series of blockbuster movies all night.",
+      "shortDescription": "Watch a series of blockbuster movies all night.A Movie Marathon is an immersive cinematic experience where film enthusiasts come together to indulge in a series of movies, often related by a common theme, genre, or franchise. It's a perfect opportunity to dive deep into your favorite film series, discover new cinematic treasures, or simply unwind and enjoy hours of compelling storytelling on the big screen. Movie Marathons offer a chance to escape reality and become fully engrossed in the world of cinema, making them a beloved pastime for movie buffs of all ages. Whether it's a day-long journey through a beloved film franchise or an all-night exploration of classic films, a Movie Marathon promises an unforgettable cinematic adventure.",
       "buttonLabel": "Get Passes"
     },
     {
@@ -21,7 +21,7 @@
       "name": "Comedy Show",
       "image": "https://i.ibb.co/mSY36Xm/kwasi-ansong-bamfo-Xmu-Jav-a-U-unsplash.jpg",
       "price": "$35",
-      "shortDescription": "Laugh your heart out with hilarious comedians.",
+      "shortDescription": "Laugh your heart out with hilarious comedians.A Comedy Show is an evening filled with laughter, humor, and entertainment, where talented comedians take the stage to tickle the audience's funny bone. These events showcase a diverse range of comedic styles, from stand-up comedy and improvisation to sketch comedy and comedic storytelling. Attendees can expect to burst into laughter as comedians share their hilarious observations about everyday life, deliver witty one-liners, and explore a wide array of comedic themes. Comedy shows provide a perfect opportunity for people to relax, unwind, and enjoy an evening of mirth and amusement, making them a favorite choice for those in search of lighthearted entertainment and good-natured humor. Whether you're a fan of clever wordplay, social satire, or slapstick comedy, a Comedy Show promises an evening of unbridled hilarity and fun.",
       "buttonLabel": "Book Seats"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Dance Party",
       "image": "https://i.ibb.co/68kG2rY/maick-maciel-v8-C6-Blp-Bz-Y-unsplash.jpg",
       "price": "$40",
-      "shortDescription": "Dance the night away to the latest beats.",
+      "shortDescription": "Dance the night away to the latest beats.A Dance Party is a vibrant and energetic gathering where people come together to dance, groove to music, and celebrate life. These events are all about music, rhythm, and movement, creating an electrifying atmosphere that encourages attendees to let loose and express themselves through dance. Whether it's a nightclub, a music festival, a wedding reception, or a themed dance event, a Dance Party offers an opportunity for people to connect with others, enjoy their favorite tunes, and showcase their dance moves. It's a celebration of music's power to unite and uplift, and it often features professional DJs or live bands to keep the beats flowing. Dance Parties are a fantastic way to unwind, socialize, and immerse yourself in the joy of dancing, making them a popular choice for those who love to move to the music.",
       "buttonLabel": "Join the Party"
     },
     {
@@ -37,7 +37,7 @@
       "name": "Theater Play",
       "image": "https://i.ibb.co/ZX6dFBF/markus-spiske-nv-KQ1kxhe-Rc-unsplash.jpg",
       "price": "$30",
-      "shortDescription": "Experience a captivating theater performance.",
+      "shortDescription": "Experience a captivating theater performance. A Theater Play is a live performance that unfolds on a stage, captivating audiences with storytelling, acting, and artistic expression. It's a form of theatrical art where actors bring characters to life and convey narratives through dialogue, emotion, and dramatic presentation. Theater plays encompass a wide range of genres, from classic dramas and comedies to tragedies, musicals, and experimental theater. In a Theater Play, the stage serves as a dynamic canvas where the magic of storytelling comes to life. It often involves the use of elaborate sets, costumes, lighting, and sound to create immersive experiences. Audience members have the privilege of witnessing the unfolding drama in real-time, experiencing a unique connection with the performers and the story. Theater plays have the power to provoke thought, stir emotions, entertain, and offer social commentary. They provide a glimpse into the human condition, offering insights, laughter, tears, and moments of reflection. Theater plays are a testament to the enduring appeal of live performance art and continue to be a beloved form of entertainment and artistic expression.",
       "buttonLabel": "Reserve Tickets"
     },
     {
@@ -45,9 +45,8 @@
       "name": "Magic Show",
       "image": "https://i.ibb.co/7rHH3LK/sergi-viladesau-dttmeq-FUDSU-unsplash.jpg",
       "price": "$20",
-      "shortDescription": "Witness mind-bending magic tricks and illusions.",
+      "shortDescription": "Witness mind-bending magic tricks and illusions. A Magic Show is a mesmerizing and enchanting live performance where a magician showcases a repertoire of astonishing tricks, illusions, and acts that defy the laws of nature and logic. These captivating events are designed to leave audiences spellbound and in awe of the magician's skills and sleight of hand. During a Magic Show, the magician performs a wide range of magical feats, such as making objects disappear and reappear, sawing people in half, levitating, and transforming ordinary items into extraordinary ones. The element of surprise and wonder is at the heart of every magic trick, making it a delightful form of entertainment for people of all ages. Magic Shows often combine suspense, humor, and audience participation to engage and entertain the crowd. They transport attendees into a world of mystery and astonishment, creating moments of sheer amazement and delight. Whether it's a stage performance, close-up magic at a table, or street magic, a Magic Show promises a memorable and enchanting experience that sparks the imagination and leaves a lasting impression.",
       "buttonLabel": "Get Tickets"
     }
-    
   ]
 }

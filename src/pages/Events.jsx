@@ -27,7 +27,7 @@ const Events = ({ event }) => {
                                     </p>
                                     <div className="flex justify-between mt-4">
                                         <Link to={`/${name}`}>
-                                            <button className="bg-green-600 px-5 py-2 rounded-lg text-white">
+                                            <button className="bg-green-600 hover:bg-indigo-700 px-5 py-2 rounded-lg text-white">
                                                 {buttonLabel}
                                             </button></Link>
                                         <p>
